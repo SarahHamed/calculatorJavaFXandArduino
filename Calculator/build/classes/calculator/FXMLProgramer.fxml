@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="741.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.FXMLDocumentController">
+    <children>
+      <BorderPane prefHeight="673.0" prefWidth="741.0">
+         <top>
+            <MenuBar prefHeight="64.0" prefWidth="876.0" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fx:id="option_image" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false">
+                           <graphic>
+                              <Button mnemonicParsing="false" onAction="#Standard_mode">
+                                 <graphic>
+                                    <FlowPane maxHeight="100.0" maxWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="standard_img" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Standard" />
+                                       </children>
+                                    </FlowPane>
+                                 </graphic>
+                              </Button>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false">
+                           <graphic>
+                              <Button mnemonicParsing="false" onAction="#Scientific_mode">
+                                 <graphic>
+                                    <FlowPane maxHeight="100.0" maxWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="Scientific_img" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scientific" />
+                                       </children>
+                                    </FlowPane>
+                                 </graphic>
+                              </Button>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false">
+                           <graphic>
+                              <Button mnemonicParsing="false" onAction="#programer_mode">
+                                 <graphic>
+                                    <FlowPane maxHeight="100.0" maxWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="Programmer_img" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Programmer" />
+                                       </children>
+                                    </FlowPane>
+                                 </graphic>
+                              </Button>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false">
+                           <graphic>
+                              <ToggleButton fx:id="selectedButton" mnemonicParsing="false" onAction="#dark_light_mode">
+                                 <graphic>
+                                    <FlowPane maxHeight="100.0" maxWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="dark_light_img" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dark/light mode" />
+                                       </children>
+                                    </FlowPane>
+                                 </graphic>
+                              </ToggleButton>
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Text fx:id="mode" fill="#5945da" strokeType="OUTSIDE" strokeWidth="0.0" text="Programer">
+                           <font>
+                              <Font size="35.0" />
+                           </font></Text>
+                     </graphic>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <bottom>
+            <VBox prefHeight="463.0" prefWidth="868.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane prefHeight="475.0" prefWidth="868.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="108.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="233.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#remove_one_char" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="⌫" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.columnIndex="3" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operation" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="+" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operation" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="-" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operation" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="*" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operation" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="/" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operation" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="√" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operation" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="^" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inverse_function" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="1/x" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.rowIndex="1" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operation" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="\%" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#equal_function" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="=" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clear_function" prefHeight="50.0" prefWidth="90.0" style="-fx-background-radius: 500;" styleClass="button_op" stylesheets="@../CSS/sample.css" text="C" textAlignment="CENTER" textFill="#f8f8f8" textOverrun="CLIP" GridPane.columnIndex="1" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="9" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="7" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.rowIndex="2" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="8" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="6" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="4" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.rowIndex="3" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="5" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="1" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.rowIndex="4" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="2" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="245.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="3" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="." textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="+/-" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.rowIndex="5" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#write_num" prefHeight="64.0" prefWidth="73.0" style="-fx-background-radius: 500;" styleClass="button_num" stylesheets="@../CSS/sample.css" text="0" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </bottom>
+         <center>
+            <Pane BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="text" layoutX="19.0" layoutY="22.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="112.0" prefWidth="597.0" style="-fx-border-color: #5945da;">
+                     <font>
+                        <Font name="Century Schoolbook" size="35.0" />
+                     </font></TextField>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+    </children>
+</AnchorPane>
